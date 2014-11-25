@@ -69,7 +69,7 @@ public class JanelaMediaGols extends JFrame implements ItemListener{
         add(pg);
         setTitle("Media de Gols");
         setVisible(true);
-        setSize(300, 200);
+        setSize(400, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 

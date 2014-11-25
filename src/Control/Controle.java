@@ -189,21 +189,25 @@ public class Controle {
             aux="Nenhum jogador encontrado.";
             return aux;
         }
-        
+        int teste=0;
         Jogador j = new Jogador();
         j.setSaldogols(0);
         for(int i=0; i<jogadores.size(); i++){
-            if(jogadores.get(i).getSaldogols()>j.getSaldogols()){
+            if(jogadores.get(i).getSaldogols()>=j.getSaldogols()){
+                teste=j.getSaldogols();
                 j=jogadores.get(i);
             }
         }
         if(j.getSaldogols()==0){
             aux="Nenhum jogador marcou gol.";
             return aux;
+        }else if(j.getSaldogols()==teste){
+            aux="Existe mais de um jogador com o maior saldo de gols.";
+            return aux;
         }else{
             aux=(j.toString());
-            return aux;
-        }
+            return aux;   
+       }
     }
     
     public Partida RetornaPartida(int id){

@@ -69,7 +69,7 @@ public class JanelaSaldoGols extends JFrame implements ItemListener {
         add(pg);
         setTitle("Saldo de Gols");
         setVisible(true);
-        setSize(300, 200);
+        setSize(400, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 

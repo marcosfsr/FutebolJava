@@ -66,7 +66,7 @@ public class JanelaPartida extends JFrame implements ActionListener, ItemListene
         jogadort1 = new JComboBox();
         jogadort2 = new JComboBox();
 
-        //PreencheJogador();    
+            
         p1.add(placar1);
         p1.add(placar);
         p1.add(placar2);
@@ -132,11 +132,15 @@ public class JanelaPartida extends JFrame implements ActionListener, ItemListene
             return;
         }
         if (e.getSource() == golt1) {
+            time1.disable();
+            time2.disable();
             placar1.setText(String.valueOf(Integer.parseInt(placar1.getText()) + 1));     //atualizando o placar1
             String[] v;
             v = ((String) jogadort1.getSelectedItem()).split(" ");
             gols.add(Integer.parseInt(v[0]));
         } else if (e.getSource() == golt2) {
+            time1.disable();
+            time2.disable();
             placar2.setText(String.valueOf(Integer.parseInt(placar2.getText()) + 1));    //atualizando o placar2
             String[] v;
             v = ((String) jogadort2.getSelectedItem()).split(" ");
@@ -191,8 +195,12 @@ public class JanelaPartida extends JFrame implements ActionListener, ItemListene
             c.AddPartida(p);
             p = new Partida();
             Limpar();
+            time1.enable();
+            time2.enable();
         } else if (e.getSource() == limpar) {
             Limpar();
+            time1.enable();
+            time2.enable();
             p = new Partida();
         }
 
